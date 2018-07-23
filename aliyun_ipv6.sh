@@ -45,3 +45,6 @@ if [ ! -f "/etc/init.d/network_backup" ]; then
     route -A inet6 add ::/0 dev sit1\
 ' /etc/init.d/network
 fi
+
+# 7. 顺便把hostname给改了
+echo "aliyun.hellozjf.com" >/etc/hostname
