@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # 1. 修改/etc/modprobe.d/disable_ipv6.conf
 if [ ! -f "/etc/modprobe.d/disable_ipv6.conf_backup" ]; then
     cp /etc/modprobe.d/disable_ipv6.conf /etc/modprobe.d/disable_ipv6.conf_backup 
@@ -25,7 +27,7 @@ fi
 
 # 5. 修改/etc/sysconfig/modules/ipv6.modules
 tee /etc/sysconfig/modules/ipv6.modules <<-'EOF'
-!/bin/sh
+#!/bin/sh
 if [ ! -c /proc/net/if_inet6 ] ; then
     exec /sbin/insmod /lib/modules/uname -r/kernel/net/ipv6/ipv6.ko
 fi
