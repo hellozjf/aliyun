@@ -25,3 +25,6 @@ if [ ! $line ]; then
 else
     sed -i $line'c vm.swappiness = 10' /etc/sysctl.conf
 fi
+
+# 5. 安装traceroute
+yum install -y traceroute.x86_64
