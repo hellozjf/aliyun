@@ -18,6 +18,8 @@ systemctl restart docker
 systemctl start docker
 systemctl enable docker
 
-# 4. 运行hello-world
-docker pull hello-world
-docker run hello-world
+# 4. 安装eureka
+docker run -d -p 8761:8761 --name eureka --restart unless-stopped springcloud/eureka
+
+# 5. 安装mysql
+docker run -d -p 3306:3306 --name mysql --restart unless-stopped -e MYSQL_ROOT_PASSWORD=Zjf@1234 mysql
