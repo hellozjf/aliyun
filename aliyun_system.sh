@@ -28,3 +28,12 @@ fi
 
 # 5. 安装traceroute
 yum install -y traceroute.x86_64
+
+# 6. 给云盘分区，格式化，挂载
+# fdisk /dev/vdb	n p 1 
+# mkfs.ext4 /dev/vdb1
+# mount /dev/vdb1 /root/ftp/vdb1
+# echo /dev/vdb1 /root/ftp/vdb1 ext4 defaults 0 0 >> /etc/fstab
+
+# 7. 安装7z
+yum install -y p7zip
